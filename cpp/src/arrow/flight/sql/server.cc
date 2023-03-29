@@ -1229,7 +1229,7 @@ arrow::Result<CancelResult> FlightSqlServerBase::CancelQuery(
 arrow::Result<CloseSessionResult> FlightSqlServerBase::CloseSession(
     const ServerCallContext& context,
     const ActionCloseSessionRequest& request) {
-  return Status::NotImplemented("CloseSession not implemented pending ");
+  return Status::NotImplemented("CloseSession not implemented");
 }
 
 arrow::Result<ActionCreatePreparedStatementResult>
