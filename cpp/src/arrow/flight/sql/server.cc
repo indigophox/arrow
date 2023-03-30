@@ -406,11 +406,9 @@ arrow::Result<ActionSetSessionOptionsRequest> ParseActionSetSessionOptionsReques
           break;
         case pb::sql::SessionOption::kStringListValue:
           std::vector<std::string> vlist;
-          if (in_opt.string_list_value().values_size() > 0) {
-            vlist.reserve(in_opt.string_list_value().values_size());
-              for (const std::string& s : in_opt.string_list_value().values())
-                vlist.push_back(s);
-          }
+          vlist.reserve(in_opt.string_list_value().values_size());
+          for (const std::string& s : in_opt.string_list_value().values())
+            vlist.push_back(s);
           opt = {name, vlist};
           break;
       }
